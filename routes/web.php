@@ -17,4 +17,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+
+Route::view("/about", "pages.about");
+Route::view("/blog", "pages.blog");
+Route::view("/article", "pages.article");
+Route::view("/contact", "pages.contact");
+Route::view("/services", "pages.services");
+Route::view("/portfolio", "pages.portfolio");
