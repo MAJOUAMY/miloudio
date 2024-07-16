@@ -21,7 +21,7 @@
         rel="stylesheet" />
 
 
-    <link rel="stylesheet" id="css-main" href="dashmix/assets/css/dashmix.min.css">
+    <link rel="stylesheet" id="css-main" href="{{ asset('dashmix/assets/css/dashmix.min.css') }}">
 
     @yield('css')
 </head>
@@ -29,125 +29,10 @@
 <body>
 
 
-    <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-fixed page-header-dark main-content-narrow sidebar-dark page-header-dark dark-mode">
-        <!-- Side Overlay-->
-        <aside id="side-overlay">
-          <!-- Side Header -->
-          <div class="bg-image" style="background-image: url('assets/media/various/bg_side_overlay_header.jpg');">
-            <div class="bg-primary-dark-op">
-              <div class="content-header">
-                <!-- User Avatar -->
-                <a class="img-link me-1" href="javascript:void(0)">
-                  <img class="img-avatar img-avatar32 img-avatar-thumb" src="assets/media/avatars/avatar12.jpg" alt="">
-                </a>
-                <!-- END User Avatar -->
-  
-                <!-- User Info -->
-                <div class="ms-2">
-                  <a class="text-white fw-semibold" href="javascript:void(0)">John Doe</a>
-                  <div class="text-white-75 fs-sm">Hacker</div>
-                </div>
-                <!-- END User Info -->
-                <!-- Close Side Overlay -->
-                <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                <a class="ms-auto text-white" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_close">
-                  <i class="fa fa-times-circle"></i>
-                </a>
-                <!-- END Close Side Overlay -->
-              </div>
-            </div>
-          </div>
-          <!-- END Side Header -->
-  
-          <!-- Side Content -->
-          <form action="db_dark.html" method="POST" onsubmit="return false;">
-            <div class="content-side">
-              <div class="block pull-x">
-                <!-- Personal -->
-                <div class="block-content block-content-sm block-content-full bg-body">
-                  <span class="text-uppercase fs-sm fw-bold">Personal</span>
-                </div>
-                <div class="block-content block-content-full">
-                  <div class="mb-4">
-                    <label class="form-label">Username</label>
-                    <input type="text" readonly class="form-control" id="staticEmail" value="Admin">
-                  </div>
-                  <div class="mb-4">
-                    <label class="form-label" for="so-profile-name">Name</label>
-                    <input type="text" class="form-control" id="so-profile-name" name="so-profile-name" value="George Taylor">
-                  </div>
-                  <div class="mb-4">
-                    <label class="form-label" for="so-profile-email">Email</label>
-                    <input type="email" class="form-control" id="so-profile-email" name="so-profile-email" value="g.taylor@example.com">
-                  </div>
-                </div>
-                <!-- END Personal -->
-  
-                <!-- Password Update -->
-                <div class="block-content block-content-sm block-content-full bg-body">
-                  <span class="text-uppercase fs-sm fw-bold">Password Update</span>
-                </div>
-                <div class="block-content block-content-full">
-                  <div class="mb-4">
-                    <label class="form-label" for="so-profile-password">Current Password</label>
-                    <input type="password" class="form-control" id="so-profile-password" name="so-profile-password">
-                  </div>
-                  <div class="mb-4">
-                    <label class="form-label" for="so-profile-new-password">New Password</label>
-                    <input type="password" class="form-control" id="so-profile-new-password" name="so-profile-new-password">
-                  </div>
-                  <div class="mb-4">
-                    <label class="form-label" for="so-profile-new-password-confirm">Confirm New Password</label>
-                    <input type="password" class="form-control" id="so-profile-new-password-confirm" name="so-profile-new-password-confirm">
-                  </div>
-                </div>
-                <!-- END Password Update -->
-  
-                <!-- Options -->
-                <div class="block-content block-content-sm block-content-full bg-body">
-                  <span class="text-uppercase fs-sm fw-bold">Options</span>
-                </div>
-                <div class="block-content">
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="so-settings-status" name="so-settings-status" value="1">
-                    <label class="form-check-label" for="so-settings-status">Online Status</label>
-                  </div>
-                  <p class="text-muted fs-sm w-100">
-                    Make your online status visible to other users of your app
-                  </p>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="so-settings-notifications" name="so-settings-notifications" value="1" checked>
-                    <label class="form-check-label" for="so-settings-notifications">Notifications</label>
-                  </div>
-                  <p class="text-muted fs-sm">
-                    Receive desktop notifications regarding your projects and sales
-                  </p>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="so-settings-updates" name="so-settings-updates" value="1" checked>
-                    <label class="form-check-label" for="so-settings-updates">Auto Updates</label>
-                  </div>
-                  <p class="text-muted fs-sm">
-                    If enabled, we will keep all your applications and servers up to date with the most recent features automatically
-                  </p>
-                </div>
-                <!-- END Options -->
-  
-                <!-- Submit -->
-                <div class="block-content row justify-content-center border-top">
-                  <div class="col-9">
-                    <button type="submit" class="btn w-100 btn-alt-primary">
-                      <i class="fa fa-fw fa-save opacity-50 me-1"></i> Save
-                    </button>
-                  </div>
-                </div>
-                <!-- END Submit -->
-              </div>
-            </div>
-          </form>
-          <!-- END Side Content -->
-        </aside>
-        <!-- END Side Overlay -->
-  
+    <div id="page-container"
+        class="sidebar-o enable-page-overlay side-scroll page-header-fixed page-header-dark main-content-narrow sidebar-dark page-header-dark dark-mode">
+
+
         <!-- Sidebar -->
         <!--
           Sidebar Mini Mode - Display Helper classes
@@ -161,222 +46,157 @@
           Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
         -->
         <nav id="sidebar" aria-label="Main Navigation">
-          <!-- Side Header -->
-          <div class="bg-header-dark">
-            <div class="content-header bg-white-5">
-              <!-- Logo -->
-              <a class="fw-semibold text-white tracking-wide" href="index.html">
-                <span class="smini-visible">
-                  D<span class="opacity-75">x</span>
-                </span>
-                <span class="smini-hidden">
-                  Dash<span class="opacity-75">mix</span>
-                  <span class="fw-normal">Dark</span>
-                </span>
-              </a>
-              <!-- END Logo -->
-  
-              <!-- Options -->
-              <div>
-                <!-- Close Sidebar, Visible only on mobile screens -->
-                <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                <button type="button" class="btn btn-sm btn-alt-secondary d-lg-none" data-toggle="layout" data-action="sidebar_close">
-                  <i class="fa fa-times-circle"></i>
-                </button>
-                <!-- END Close Sidebar -->
-              </div>
-              <!-- END Options -->
+            <!-- Side Header -->
+            <div class="bg-header-dark">
+                <div class="content-header bg-white-5">
+                    <!-- Logo -->
+                    <a class="fw-semibold text-white tracking-wide" href="/">
+                        <span class="smini-visible">
+                            M<span class="opacity-75">i</span>
+                        </span>
+                        <span class="smini-hidden">
+                            Miloud<span class="opacity-75">Io</span>
+                            <span class="fw-normal"></span>
+                        </span>
+                    </a>
+                    <!-- END Logo -->
+
+                    <!-- Options -->
+                    <div>
+                        <!-- Close Sidebar, Visible only on mobile screens -->
+                        <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                        <button type="button" class="btn btn-sm btn-alt-secondary d-lg-none" data-toggle="layout"
+                            data-action="sidebar_close">
+                            <i class="fa fa-times-circle"></i>
+                        </button>
+                        <!-- END Close Sidebar -->
+                    </div>
+                    <!-- END Options -->
+                </div>
             </div>
-          </div>
-          <!-- END Side Header -->
-  
-          <!-- Sidebar Scrolling -->
-          <div class="js-sidebar-scroll">
-            <!-- Side Actions -->
-            <div class="smini-hide">
+            <!-- END Side Header -->
+
+            <!-- Sidebar Scrolling -->
+            <div class="js-sidebar-scroll">
+                <!-- Side Actions -->
+                {{-- <div class="smini-hide">
               <div class="content-side content-side-full bg-body-light">
                 <button type="button" class="btn w-100 btn-alt-primary">
                   <i class="fa fa-plus opacity-50 me-1"></i> New Project
                 </button>
               </div>
+            </div> --}}
+                <!-- END Side Actions -->
+
+                <!-- Side Navigation -->
+                <div class="content-side">
+                    <ul class="nav-main">
+                        <li class="nav-main-item">
+                            <a class="nav-main-link active" href="db_dark.html">
+                                <i class="nav-main-link-icon fa fa-rocket"></i>
+                                <span class="nav-main-link-name">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-heading">Pages</li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="/about/edit">
+                                <i class="nav-main-link-icon fa fa-rocket"></i>
+                                <span class="nav-main-link-name">about</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="">
+                                <i class="nav-main-link-icon fa fa-shopping-bag"></i>
+                                <span class="nav-main-link-name">Pricing</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="">
+                                <i class="nav-main-link-icon fa fa-check"></i>
+                                <span class="nav-main-link-name">Plans</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="">
+                                <i class="nav-main-link-icon fa fa-life-ring"></i>
+                                <span class="nav-main-link-name">Support</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="">
+                                <i class="nav-main-link-icon fa fa-envelope"></i>
+                                <span class="nav-main-link-name">Contact</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-heading">More</li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="">
+                                <i class="nav-main-link-icon fa fa-user"></i>
+                                <span class="nav-main-link-name">Account</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="">
+                                <i class="nav-main-link-icon fa fa-cog"></i>
+                                <span class="nav-main-link-name">Settings</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-heading">Dashboards</li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="be_pages_dashboard_all.html">
+                                <i class="nav-main-link-icon fa fa-arrow-left"></i>
+                                <span class="nav-main-link-name">Go Back</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END Side Navigation -->
             </div>
-            <!-- END Side Actions -->
-  
-            <!-- Side Navigation -->
-            <div class="content-side">
-              <ul class="nav-main">
-                <li class="nav-main-item">
-                  <a class="nav-main-link active" href="db_dark.html">
-                    <i class="nav-main-link-icon fa fa-rocket"></i>
-                    <span class="nav-main-link-name">Dashboard</span>
-                  </a>
-                </li>
-                <li class="nav-main-heading">Pages</li>
-                <li class="nav-main-item">
-                  <a class="nav-main-link" href="">
-                    <i class="nav-main-link-icon fa fa-rocket"></i>
-                    <span class="nav-main-link-name">Features</span>
-                  </a>
-                </li>
-                <li class="nav-main-item">
-                  <a class="nav-main-link" href="">
-                    <i class="nav-main-link-icon fa fa-shopping-bag"></i>
-                    <span class="nav-main-link-name">Pricing</span>
-                  </a>
-                </li>
-                <li class="nav-main-item">
-                  <a class="nav-main-link" href="">
-                    <i class="nav-main-link-icon fa fa-check"></i>
-                    <span class="nav-main-link-name">Plans</span>
-                  </a>
-                </li>
-                <li class="nav-main-item">
-                  <a class="nav-main-link" href="">
-                    <i class="nav-main-link-icon fa fa-life-ring"></i>
-                    <span class="nav-main-link-name">Support</span>
-                  </a>
-                </li>
-                <li class="nav-main-item">
-                  <a class="nav-main-link" href="">
-                    <i class="nav-main-link-icon fa fa-envelope"></i>
-                    <span class="nav-main-link-name">Contact</span>
-                  </a>
-                </li>
-                <li class="nav-main-heading">More</li>
-                <li class="nav-main-item">
-                  <a class="nav-main-link" href="">
-                    <i class="nav-main-link-icon fa fa-user"></i>
-                    <span class="nav-main-link-name">Account</span>
-                  </a>
-                </li>
-                <li class="nav-main-item">
-                  <a class="nav-main-link" href="">
-                    <i class="nav-main-link-icon fa fa-cog"></i>
-                    <span class="nav-main-link-name">Settings</span>
-                  </a>
-                </li>
-                <li class="nav-main-heading">Dashboards</li>
-                <li class="nav-main-item">
-                  <a class="nav-main-link" href="be_pages_dashboard_all.html">
-                    <i class="nav-main-link-icon fa fa-arrow-left"></i>
-                    <span class="nav-main-link-name">Go Back</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <!-- END Side Navigation -->
-          </div>
-          <!-- END Sidebar Scrolling -->
+            <!-- END Sidebar Scrolling -->
         </nav>
         <!-- END Sidebar -->
-  
+
         <!-- Header -->
         <header id="page-header">
-          <!-- Header Content -->
-          <div class="content-header">
-            <!-- Left Section -->
-            <div>
-              <!-- Toggle Sidebar -->
-              <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
-              <button type="button" class="btn btn-alt-secondary" data-toggle="layout" data-action="sidebar_toggle">
-                <i class="fa fa-fw fa-bars"></i>
-              </button>
-              <!-- END Toggle Sidebar -->
-  
-              <!-- User Dropdown -->
-              <div class="dropdown d-inline-block">
-                <button type="button" class="btn btn-alt-secondary" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-fw fa-user"></i>
-                  <i class="fa fa-fw fa-angle-down d-none d-sm-inline-block opacity-50"></i>
-                </button>
-                <div class="dropdown-menu p-0" aria-labelledby="page-header-user-dropdown">
-                  <div class="bg-primary-dark rounded-top fw-semibold text-white text-center p-3">
-                    User Options
-                  </div>
-                  <div class="p-2">
-                    <a class="dropdown-item" href="be_pages_generic_profile.html">
-                      <i class="far fa-fw fa-user me-1"></i> Profile
-                    </a>
-                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="be_pages_generic_inbox.html">
-                      <span><i class="far fa-fw fa-envelope me-1"></i> Inbox</span>
-                      <span class="badge bg-primary">3</span>
-                    </a>
-                    <a class="dropdown-item" href="be_pages_generic_invoice.html">
-                      <i class="far fa-fw fa-file-alt me-1"></i> Invoices
-                    </a>
-                    <div role="separator" class="dropdown-divider"></div>
-  
-                    <!-- Toggle Side Overlay -->
-                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                    <a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">
-                      <i class="far fa-fw fa-building me-1"></i> Settings
-                    </a>
-                    <!-- END Side Overlay -->
-  
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="op_auth_signin.html">
-                      <i class="far fa-fw fa-arrow-alt-circle-left me-1"></i> Sign Out
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- END User Dropdown -->
-            </div>
-            <!-- END Left Section -->
-  
-            <!-- Right Section -->
-            <div>
-              <!-- Toggle Side Overlay -->
-              <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-              <button type="button" class="btn btn-alt-secondary" data-toggle="layout" data-action="side_overlay_toggle">
-                <i class="fa fa-fw fa-cogs"></i>
-              </button>
-              <!-- END Toggle Side Overlay -->
-  
-              <!-- Open Search Section -->
-              <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-              <button type="button" class="btn btn-alt-secondary" data-toggle="layout" data-action="header_search_on">
-                <i class="fa fa-fw fa-search"></i>
-              </button>
-              <!-- END Open Search Section -->
-            </div>
-            <!-- END Right Section -->
-          </div>
-          <!-- END Header Content -->
-  
-          <!-- Header Search -->
-          <div id="page-header-search" class="overlay-header bg-primary">
+            <!-- Header Content -->
             <div class="content-header">
-              <form class="w-100" action="be_pages_generic_search.html" method="POST">
-                <div class="input-group">
-                  <input type="text" class="form-control border-0" placeholder="Search or hit ESC.." id="page-header-search-input" name="page-header-search-input">
-                  <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                  <button type="button" class="btn btn-primary" data-toggle="layout" data-action="header_search_off">
-                    <i class="fa fa-fw fa-times-circle"></i>
-                  </button>
+                <!-- Left Section -->
+                <div>
+                    <!-- Toggle Sidebar -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
+                    <button type="button" class="btn btn-alt-secondary" data-toggle="layout"
+                        data-action="sidebar_toggle">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <!-- END Toggle Sidebar -->
+
+
                 </div>
-              </form>
+                <!-- END Left Section -->
+
+
             </div>
-          </div>
-          <!-- END Header Search -->
-  
-          <!-- Header Loader -->
-          <!-- Please check out the Loaders page under Components category to see examples of showing/hiding it -->
-          <div id="page-header-loader" class="overlay-header bg-primary-darker">
-            <div class="content-header">
-              <div class="w-100 text-center">
-                <i class="fa fa-fw fa-2x fa-sun fa-spin text-white"></i>
-              </div>
+            <!-- END Header Content -->
+
+
+
+            <!-- Header Loader -->
+            <!-- Please check out the Loaders page under Components category to see examples of showing/hiding it -->
+            <div id="page-header-loader" class="overlay-header bg-primary-darker">
+                <div class="content-header">
+                    <div class="w-100 text-center">
+                        <i class="fa fa-fw fa-2x fa-sun fa-spin text-white"></i>
+                    </div>
+                </div>
             </div>
-          </div>
-          <!-- END Header Loader -->
+            <!-- END Header Loader -->
         </header>
         <!-- END Header -->
-  
+
         <!-- Main Container -->
         <main id="main-container">
-          <!-- Hero -->
-          {{-- <div class="bg-image" style="background-image: url('assets/media/various/bg_dashboard.jpg');">
+            <!-- Hero -->
+            {{-- <div class="bg-image" style="background-image: url('assets/media/various/bg_dashboard.jpg');">
             <div class="bg-black-75">
               <div class="content content-full">
                 <div class="row my-3">
@@ -410,14 +230,14 @@
               </div>
             </div>
           </div> --}}
-          <!-- END Hero -->
-  
-          <!-- Page Content -->
-          <div class="content">
-            <!-- Quick Stats -->
-            <!-- jQuery Sparkline (.js-sparkline class is initialized in Helpers.jqSparkline() -->
-            <!-- For more info and examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
-            {{-- <div class="row">
+            <!-- END Hero -->
+
+            <!-- Page Content -->
+            <div class="content">
+                <!-- Quick Stats -->
+                <!-- jQuery Sparkline (.js-sparkline class is initialized in Helpers.jqSparkline() -->
+                <!-- For more info and examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
+                {{-- <div class="row">
               <div class="col-md-6 col-xl-3">
                 <a class="block block-rounded block-link-pop" href="javascript:void(0)">
                   <div class="block-content block-content-full">
@@ -543,10 +363,10 @@
                 </a>
               </div>
             </div> --}}
-            <!-- END Quick Stats -->
-  
-            <!-- Main Chart -->
-            {{-- <div class="block block-rounded block-mode-loading-refresh">
+                <!-- END Quick Stats -->
+
+                <!-- Main Chart -->
+                {{-- <div class="block block-rounded block-mode-loading-refresh">
               <div class="block-header block-header-default">
                 <h3 class="block-title">Earnings</h3>
                 <div class="block-options">
@@ -574,10 +394,10 @@
                 </div>
               </div>
             </div> --}}
-            <!-- END Main Chart -->
-  
-            <!-- Users and Purchases -->
-            {{-- <div class="row items-push">
+                <!-- END Main Chart -->
+
+                <!-- Users and Purchases -->
+                {{-- <div class="row items-push">
               <div class="col-xl-6">
                 <!-- Users -->
                 <div class="block block-rounded block-mode-loading-refresh h-100 mb-0">
@@ -926,16 +746,16 @@
                 <!-- END Purchases -->
               </div>
             </div> --}}
-            <!-- END Users and Purchases -->
+                <!-- END Users and Purchases -->
 
-            @yield("main")
-          </div>
-          <!-- END Page Content -->
+                @yield('main')
+            </div>
+            <!-- END Page Content -->
         </main>
         <!-- END Main Container -->
-  
+
         <!-- Footer -->
-        <footer id="page-footer" class="bg-body-light">
+        {{-- <footer id="page-footer" class="bg-body-light">
           <div class="content py-0">
             <div class="row fs-sm">
               <div class="col-sm-6 order-sm-2 mb-1 mb-sm-0 text-center text-sm-end">
@@ -946,23 +766,27 @@
               </div>
             </div>
           </div>
-        </footer>
+        </footer> --}}
         <!-- END Footer -->
-      </div>
+    </div>
 
 
 
 
 
-    <script src="dashmix/assets/js/dashmix.app.min.js"></script>
-    <script src="dashmixassets/js/lib/jquery.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ asset('dashmix/assets/js/lib/jquery.min.js') }}"></script>
+
+    <!-- Dashmix Core JS -->
+    <script src="{{ asset('dashmix/assets/js/dashmix.app.min.js') }}"></script>
 
     <!-- Page JS Plugins -->
-    <script src="dashmix/assets/js/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
-    <script src="dashmixassets/js/plugins/chart.js/chart.min.js"></script>
+    <script src="{{ asset('dashmix/assets/js/plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ asset('dashmix/assets/js/plugins/chart.js/chart.min.js') }}"></script>
 
     <!-- Page JS Code -->
-    <script src="dashmix/assets/js/pages/be_pages_dashboard_v1.min.js"></script>
+    <script src="{{ asset('dashmix/assets/js/pages/be_pages_dashboard_v1.min.js') }}"></script>
+
 
     @yield('js')
 

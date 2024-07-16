@@ -321,12 +321,12 @@
             <div class="">
                 <div class="rounded-2xl bg-white p-6 shadow dark:bg-black dark:shadow-dark lg:sticky lg:top-24">
                     <div class="aspect-6/4 overflow-hidden rounded-lg bg-light pt-4 text-center dark:bg-dark-2">
-                        <img src="assets/img/profile.png" alt=""
+                        <img src="{{ asset('storage/'.$user->image) }}" alt=""
                             class="inline-block h-full w-full scale-110 object-contain object-bottom" />
                     </div>
 
                     <div class="mt-6">
-                        <h3 class="text-2xl font-semibold dark:text-light">Miloud Ajouamy👋</h3>
+                        <h3 class="text-2xl font-semibold dark:text-light">{{ $user->name }} 👋</h3>
                         <p class="mt-2 text-muted dark:text-light/70">
                             A Passionate
                             <span class="font-semibold text-dark dark:text-white">
@@ -338,14 +338,14 @@
                             </span>
                             having
                             <span class="font-semibold text-dark dark:text-white">
-                                1 year
+                                {{ $user->experience_years  }} {{ $user->experience_years ==1 ? "year" :"years" }}
                             </span>
                             of Experiences .
                         </p>
 
                         <!-- CTA buttons -->
                         <div class="mt-6 flex flex-wrap gap-2">
-                            <a href="#"
+                            <a href="tel:{{ $user->phone }}  "
                                 class="inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-primary px-6 py-4 font-medium text-white transition hover:bg-blue-600 focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -355,7 +355,7 @@
                                 </svg>
                                 <span>Book A Call</span>
                             </a>
-                            <button type="button" data-clipboard-text="ajouamymiloud@gmail.com"
+                            <button type="button" data-clipboard-text=" {{ $user->work_email }}  "
                                 data-clipboard-action="copy" data-clipboard-success-text="Copied to clipboard"
                                 class="js-clipboard hs-tooltip inline-flex items-center gap-x-2 rounded-lg border border-light bg-transparent px-6 py-4 font-medium text-dark transition [--trigger:focus] hover:bg-light focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:text-light/70 dark:hover:bg-dark dark:hover:text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"

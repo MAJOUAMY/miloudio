@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Experience;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,8 +17,32 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
+            'name' => 'MILOUD AJOUAMY',
             'email' => 'test@example.com',
+            'work_email' => 'ajouamymiloud@gmail.com',
+            "phone" => "+212600823493",
+            "experience_years" => 1,
+
+
+        ]);
+
+        Experience::create([
+            "company" => "google",
+            "company_logo" => "test/dldùldxlf",
+            "function" => "web developer",
+            "start_year" => 2023,
+            "end_year" => 2023,
+
+            "user_id" => 1
+        ]);
+        Experience::create([
+            "company" => "facebook",
+            "company_logo" => "test/dldùldxlf",
+            "function" => "web developer",
+            "start_year" => 2024,
+            "end_year" => 2029,
+
+            "user_id" => 1
         ]);
     }
 }

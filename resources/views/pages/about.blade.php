@@ -8,7 +8,7 @@
     <div class="flex flex-col-reverse items-start gap-6 lg:flex-row lg:gap-10">
         <div class="">
             <h2 class="text-3xl font-semibold text-dark dark:text-light lg:text-[40px]">
-                Hi, This Is <span class="text-primary">Cris Rayaan</span> 👋
+                Hi, This Is <span class="text-primary">{{ $user->name }}</span> 👋
             </h2>
             <p class="mt-4 text-lg text-muted dark:text-light/70 lg:mt-6 lg:text-2xl">
                 A Passionate
@@ -41,7 +41,7 @@
         <div class="flex flex-wrap items-start gap-6 lg:gap-10">
             <div class="">
                 <h2 class="text-3xl font-semibold text-dark dark:text-light lg:text-[40px]">
-                    <span>40</span>+
+                    <span>{{ $user->experience_years }}</span>+
                 </h2>
                 <p class="mt-2 text-muted">Year of Experience</p>
             </div>

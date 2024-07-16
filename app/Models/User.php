@@ -20,7 +20,19 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        "experience_years",
+        "telephone",
+        "work_email",
+        "available"
+
+
     ];
+
+
+    public function experiences()
+    {
+        return $this->hasMany(Experience::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
