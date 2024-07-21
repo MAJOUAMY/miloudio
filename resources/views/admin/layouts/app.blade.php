@@ -105,15 +105,15 @@
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="">
+                            <a class="nav-main-link" href="/admin/blog">
                                 <i class="nav-main-link-icon fa fa-shopping-bag"></i>
-                                <span class="nav-main-link-name">Pricing</span>
+                                <span class="nav-main-link-name">Blog</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="">
+                            <a class="nav-main-link" href="/admin/categories">
                                 <i class="nav-main-link-icon fa fa-check"></i>
-                                <span class="nav-main-link-name">Plans</span>
+                                <span class="nav-main-link-name">Categories</span>
                             </a>
                         </li>
                         <li class="nav-main-item">

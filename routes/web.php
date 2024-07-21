@@ -1,9 +1,14 @@
 <?php
 
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProfileController;
+use App\Models\User;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ServiceController;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -15,12 +20,28 @@ Route::middleware('auth')->group(function () {
     //about
     Route::get("/about/edit", [AboutController::class, 'edit']);
     Route::post("/about", [AboutController::class, 'update']);
+
+    //blog 
+
+    Route::get('/admin/blog', [BlogController::class, 'indexAdmin']);
+    Route::get('/blog/create', [BlogController::class, 'create']);
+    Route::get('/blog/delete/{id}', [BlogController::class, 'destroy']);
+    Route::post('/blog/store', [BlogController::class, 'store']);
+
+    //categories
+    Route::get("/admin/categories", [CategoryController::class, 'index']);
+    Route::get("/category/delete/{id}", [CategoryController::class, 'destroy']);
+    Route::post("/admin/categories", [CategoryController::class, 'store']);
 });
 
 require __DIR__ . '/auth.php';
 Route::get("/about", [AboutController::class, 'index']);
-Route::view("/blog", "pages.blog");
-Route::view("/article", "pages.article");
-Route::view("/contact", "pages.contact");
-Route::view("/services", "pages.services");
+Route::get("/blog", [BlogController::class, 'index']);
+Route::get("/blog/{id}", [BlogController::class, 'show']);
+
+Route::get("/contact", function () {
+    $user = User::find(1);
+    return view("pages.contact")->with("user", $user);
+});
+Route::get("/services", [ServiceController::class, 'index']);
 Route::view("/portfolio", "pages.portfolio");

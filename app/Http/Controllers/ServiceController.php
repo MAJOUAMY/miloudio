@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -12,7 +13,10 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $user = User::find(1);
+         
+        return view("pages.services")->with(["user"=>$user]);
+    
     }
 
     /**

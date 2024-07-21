@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Blog;
+use App\Models\Category;
 use App\Models\Experience;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -44,5 +46,8 @@ class DatabaseSeeder extends Seeder
 
             "user_id" => 1
         ]);
+        Category::factory(10)->create();
+
+        Blog::factory(10)->create();
     }
 }
