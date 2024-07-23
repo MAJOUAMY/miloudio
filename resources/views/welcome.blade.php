@@ -21,7 +21,7 @@
                             </p>
                             <div class="flex items-center gap-3">
                                 <div class="grid h-8 w-8 shrink-0 place-content-center rounded-lg bg-light dark:bg-dark-2">
-                                    <img src="{{ $e->company_logo }}" alt="" class="h-5 w-5" />
+                                    <img src="{{ asset('storage/' . $e->company_logo) }}" alt="" class="h-5 w-5" />
                                 </div>
                                 <div class="">
                                     <h6 class="text-base font-semibold text-dark dark:text-light/70">
@@ -36,30 +36,34 @@
                     @endforeach
 
                 </div>
+                @if (count($user->experiences) > 1)
+                    <div class="animate-scrollY space-y-4 group-hover:[animation-play-state:paused]">
 
-                <div class="animate-scrollY space-y-4 group-hover:[animation-play-state:paused]">
-
-                    @foreach ($user->experiences as $e)
-                        <div class="flex flex-col gap-1 md:flex-row md:gap-10">
-                            <p class="mt-1 text-sm font-medium text-muted dark:text-light/70">
-                                {{ $e->start_year }} - {{ $e->end_year }}
-                            </p>
-                            <div class="flex items-center gap-3">
-                                <div class="grid h-8 w-8 shrink-0 place-content-center rounded-lg bg-light dark:bg-dark-2">
-                                    <img src="{{ $e->company_logo }}" alt="" class="h-5 w-5" />
-                                </div>
-                                <div class="">
-                                    <h6 class="text-base font-semibold text-dark dark:text-light/70">
-                                        {{ $e->company }}
-                                    </h6>
-                                    <p class="text-sm text-muted">
-                                        {{ $e->function }}
-                                    </p>
+                        @foreach ($user->experiences as $e)
+                            <div class="flex flex-col gap-1 md:flex-row md:gap-10">
+                                <p class="mt-1 text-sm font-medium text-muted dark:text-light/70">
+                                    {{ $e->start_year }} - {{ $e->end_year }}
+                                </p>
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="grid h-8 w-8 shrink-0 place-content-center rounded-lg bg-light dark:bg-dark-2">
+                                        <img src="{{ asset('storage/' . $e->company_logo) }}" alt=""
+                                            class="h-5 w-5" />
+                                    </div>
+                                    <div class="">
+                                        <h6 class="text-base font-semibold text-dark dark:text-light/70">
+                                            {{ $e->company }}
+                                        </h6>
+                                        <p class="text-sm text-muted">
+                                            {{ $e->function }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                        @endforeach
+                    </div>
+                @endif
+
             </div>
         </div>
 

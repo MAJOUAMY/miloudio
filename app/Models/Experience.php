@@ -9,6 +9,12 @@ class Experience extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "company",
+        "company_logo", "function",
+        "start_year", "end_year",
+        "user_id"
+    ];
 
 
 

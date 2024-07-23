@@ -100,54 +100,32 @@
                         <li class="nav-main-heading">Pages</li>
                         <li class="nav-main-item">
                             <a class="nav-main-link" href="/about/edit">
-                                <i class="nav-main-link-icon fa fa-rocket"></i>
-                                <span class="nav-main-link-name">about</span>
+                                <i class="nav-main-link-icon fa fa-address-card"></i>
+                                <span class="nav-main-link-name">About</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
                             <a class="nav-main-link" href="/admin/blog">
-                                <i class="nav-main-link-icon fa fa-shopping-bag"></i>
+                                <i class="nav-main-link-icon fa fa-blog"></i>
                                 <span class="nav-main-link-name">Blog</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
                             <a class="nav-main-link" href="/admin/categories">
-                                <i class="nav-main-link-icon fa fa-check"></i>
+                                <i class="nav-main-link-icon fa fa-list"></i>
                                 <span class="nav-main-link-name">Categories</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="">
-                                <i class="nav-main-link-icon fa fa-life-ring"></i>
-                                <span class="nav-main-link-name">Support</span>
+                            <a class="nav-main-link" href="/admin/experience">
+                                <i class="nav-main-link-icon fa fa-check"></i>
+                                <span class="nav-main-link-name">Experiences</span>
                             </a>
                         </li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link" href="">
-                                <i class="nav-main-link-icon fa fa-envelope"></i>
-                                <span class="nav-main-link-name">Contact</span>
-                            </a>
-                        </li>
-                        <li class="nav-main-heading">More</li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link" href="">
-                                <i class="nav-main-link-icon fa fa-user"></i>
-                                <span class="nav-main-link-name">Account</span>
-                            </a>
-                        </li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link" href="">
-                                <i class="nav-main-link-icon fa fa-cog"></i>
-                                <span class="nav-main-link-name">Settings</span>
-                            </a>
-                        </li>
-                        <li class="nav-main-heading">Dashboards</li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link" href="be_pages_dashboard_all.html">
-                                <i class="nav-main-link-icon fa fa-arrow-left"></i>
-                                <span class="nav-main-link-name">Go Back</span>
-                            </a>
-                        </li>
+
+
+
+
                     </ul>
                 </div>
                 <!-- END Side Navigation -->

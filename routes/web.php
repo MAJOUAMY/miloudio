@@ -8,6 +8,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -32,6 +34,13 @@ Route::middleware('auth')->group(function () {
     Route::get("/admin/categories", [CategoryController::class, 'index']);
     Route::get("/category/delete/{id}", [CategoryController::class, 'destroy']);
     Route::post("/admin/categories", [CategoryController::class, 'store']);
+
+
+    // experience 
+    Route::get("/admin/experience", [ExperienceController::class, 'index']);
+    Route::post("/admin/experience", [ExperienceController::class, 'store']);
+    Route::get("/admin/experience/create", [ExperienceController::class, 'create'])->name("experience.create");
+    Route::get("/admin/experience/delete/{id}", [ExperienceController::class, 'destroy']);
 });
 
 require __DIR__ . '/auth.php';
@@ -44,4 +53,4 @@ Route::get("/contact", function () {
     return view("pages.contact")->with("user", $user);
 });
 Route::get("/services", [ServiceController::class, 'index']);
-Route::view("/portfolio", "pages.portfolio");
+Route::get("/portfolio", [ProjectController::class, 'index']);
