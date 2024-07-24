@@ -11,18 +11,26 @@ class ProjectController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
         $user = User::find(1);
-        return view("pages.portfolio")->with("user", $user);
-    }
 
+        $projects = Project::paginate(3);
+
+        return view("pages.portfolio")->with(["user" => $user, "projects" => $projects]);
+    }
+    public function AdminIndex()
+    {
+        $projects = Project::all();
+        return view("admin.project.index")->with("projects", $projects);
+    }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view("admin.project.create");
     }
 
     /**
@@ -30,7 +38,15 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Project::create([
+            "title" => $request->title,
+            "description" => $request->description,
+            "image" => $request->image->store('projects', "public"),
+            "url" => $request->url,
+            "user_id" => 1,
+
+        ]);
+        return redirect("/admin/projects");
     }
 
     /**

@@ -122,6 +122,13 @@
                                 <span class="nav-main-link-name">Experiences</span>
                             </a>
                         </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="/admin/projects">
+                                <i class="nav-main-link-icon fa fa-briefcase"></i>
+
+                                <span class="nav-main-link-name">projects</span>
+                            </a>
+                        </li>
 
 
 

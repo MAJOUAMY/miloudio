@@ -62,9 +62,11 @@
 
 
             </div>
-
+            <div class="pagination">
+                {{ $blogs->links() }}
+            </div>
             <!-- Pagination -->
-            <nav class="mt-10 flex items-center justify-center gap-1.5">
+            {{-- <nav class="mt-10 flex items-center justify-center gap-1.5">
                 <button type="button"
                     class="inline-flex min-h-9 min-w-9 items-center justify-center rounded-lg border border-light text-center text-dark transition hover:border-primary hover:text-primary focus:outline-none focus:ring-2 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:text-muted dark:hover:border-primary dark:hover:text-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -117,7 +119,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg>
                 </button>
-            </nav>
+            </nav> --}}
             <!-- End Pagination -->
         </div>
     </div>

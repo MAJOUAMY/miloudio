@@ -41,6 +41,15 @@ Route::middleware('auth')->group(function () {
     Route::post("/admin/experience", [ExperienceController::class, 'store']);
     Route::get("/admin/experience/create", [ExperienceController::class, 'create'])->name("experience.create");
     Route::get("/admin/experience/delete/{id}", [ExperienceController::class, 'destroy']);
+
+
+    //projects routes
+
+
+    Route::get("/admin/projects", [ProjectController::class, 'AdminIndex']);
+    Route::get("/project/create", [ProjectController::class, 'create']);
+    Route::get("/project/delete/{id}", [ProjectController::class, 'destroy']);
+    Route::post("/project/store", [ProjectController::class, 'store']);
 });
 
 require __DIR__ . '/auth.php';
