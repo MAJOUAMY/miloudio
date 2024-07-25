@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Certificate;
 use App\Models\Experience;
 use App\Models\Project;
 use App\Models\User;
@@ -52,5 +53,6 @@ class DatabaseSeeder extends Seeder
         Blog::factory(10)->create();
 
         Project::factory(10)->create();
+        Certificate::factory(5)->create();
     }
 }

@@ -129,6 +129,13 @@
                                 <span class="nav-main-link-name">projects</span>
                             </a>
                         </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="/admin/certificate">
+                                <i class="nav-main-link-icon fa fa-award"></i>
+
+                                <span class="nav-main-link-name">Awards & Recognition</span>
+                            </a>
+                        </li>
 
 
 

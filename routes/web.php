@@ -7,10 +7,12 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\CertificateController;
+
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -50,6 +52,14 @@ Route::middleware('auth')->group(function () {
     Route::get("/project/create", [ProjectController::class, 'create']);
     Route::get("/project/delete/{id}", [ProjectController::class, 'destroy']);
     Route::post("/project/store", [ProjectController::class, 'store']);
+
+
+    //cirtificate 
+
+    Route::get("/admin/certificate", [CertificateController::class, 'index']);
+    Route::get("/certificate/create", [CertificateController::class, 'create']);
+    Route::post("/certificate/store", [CertificateController::class, 'store']);
+    Route::get("/certificate/delete/{id}", [CertificateController::class, 'destroy']);
 });
 
 require __DIR__ . '/auth.php';

@@ -12,8 +12,9 @@ class AboutController extends Controller
 
     public function index()
     {
-        $user = User::find(1);
-        return view("pages.about")->with("user", $user);
+        $user = User::with(['certificates', 'blogs' ])->withCount('projects')->find(1);
+
+        return view('pages.about')->with('user', $user);
     }
 
     public function edit()
@@ -37,7 +38,7 @@ class AboutController extends Controller
             }
             $user->image = $image;
         }
-        
+
 
 
         $user->name = $request->name;
