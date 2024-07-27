@@ -8,7 +8,7 @@
             <h3 class="block-title">Table</h3>
             <div class="block-options">
                 <div class="block-options-item">
-                    <a href="/service/create" class="btn btn-success"> add sevices</a>
+                    <a href="/skill/create" class="btn btn-success"> add skill</a>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($services as $p)
+                    @foreach ($skills as $p)
                         <tr>
                             <th class="text-center" scope="row">{{ $p->id }}</th>
                             <td class="fw-semibold">
@@ -38,7 +38,7 @@
                                         title="Edit">
                                         <i class="fa fa-pencil-alt"></i>
                                     </button>
-                                    <a href="/service/delete/{{ $p->id }}" type="button"
+                                    <a href="/skill/delete/{{ $p->id }}" type="button"
                                         class="btn btn-sm btn-alt-secondary" data-bs-toggle="tooltip" title="Delete">
                                         <i class="fa fa-times"></i>
                                     </a>

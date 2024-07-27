@@ -77,74 +77,29 @@
         <!-- Brands -->
         <div class="mt-10 lg:mt-14">
             <h3 class="text-2xl font-medium text-dark dark:text-light lg:text-3xl">
-                Working With 50+ Brands ✨ Worldwide
+                My Expert Area ✨
             </h3>
-            <div
+            {{-- <div
                 class="mt-8 grid grid-cols-[repeat(auto-fit,_minmax(60px,1fr))] gap-2 lg:grid-cols-[repeat(auto-fit,_minmax(80px,1fr))] lg:gap-4">
                 <div
                     class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
                     <img src="assets/img/notion.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
                 </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/webflow.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/mico.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/framer.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/zeplin.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/figma.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/notion.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/webflow.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/mico.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/framer.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/zeplin.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/figma.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/notion.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/webflow.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/mico.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/framer.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
+
+            </div> --}}
+            <div class="mt-8 grid grid-cols-[repeat(auto-fit,_minmax(60px,1fr))] gap-2 lg:grid-cols-[repeat(auto-fit,_minmax(80px,1fr))] lg:gap-4">
+                @foreach ($user->skills as $skill)
+                    <div class="text-center">
+                        <div class="grid place-content-center rounded-lg bg-light p-3 dark:bg-dark-2">
+                            <img src="{{ asset('storage/' . $skill->logo) }}" alt="" class="h-8 w-8" />
+                        </div>
+                        <p class="mt-1 text-base font-medium text-dark dark:text-light/70">
+                            {{ $skill->name }}
+                        </p>
+                    </div>
+                @endforeach
+
+
             </div>
         </div>
 
@@ -418,39 +373,39 @@
                             </div>
                         @endforeach
 
-                       
 
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Contact -->
-    <div class="mt-10 lg:mt-14">
-        <div class="group flex gap-6 overflow-hidden rounded-lg bg-light p-6 dark:bg-dark-2">
-            <div
-                class="relative flex min-w-full shrink-0 animate-infinite-scroll gap-6 group-hover:[animation-play-state:paused]">
-                <a href="contact.html"
-                    class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:mr-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]">
-                    Let's 👋 Work Together
-                </a>
-                <a href="contact.html"
-                    class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:mr-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]">
-                    Let's 👋 Work Together
-                </a>
-            </div>
-            <div
-                class="relative flex min-w-full shrink-0 animate-infinite-scroll gap-6 group-hover:[animation-play-state:paused]">
-                <a href="contact.html"
-                    class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:mr-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]">
-                    Let's 👋 Work Together
-                </a>
-                <a href="contact.html"
-                    class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:mr-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]">
-                    Let's 👋 Work Together
-                </a>
+        <!-- Contact -->
+        <div class="mt-10 lg:mt-14">
+            <div class="group flex gap-6 overflow-hidden rounded-lg bg-light p-6 dark:bg-dark-2">
+                <div
+                    class="relative flex min-w-full shrink-0 animate-infinite-scroll gap-6 group-hover:[animation-play-state:paused]">
+                    <a href="contact.html"
+                        class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:mr-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]">
+                        Let's 👋 Work Together
+                    </a>
+                    <a href="contact.html"
+                        class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:mr-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]">
+                        Let's 👋 Work Together
+                    </a>
+                </div>
+                <div
+                    class="relative flex min-w-full shrink-0 animate-infinite-scroll gap-6 group-hover:[animation-play-state:paused]">
+                    <a href="contact.html"
+                        class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:mr-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]">
+                        Let's 👋 Work Together
+                    </a>
+                    <a href="contact.html"
+                        class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:mr-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]">
+                        Let's 👋 Work Together
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection

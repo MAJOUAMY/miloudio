@@ -54,7 +54,11 @@
               <label class="form-label" for="example-textarea-input">Textarea</label>
               <textarea class="form-control" id="example-textarea-input" name="example-textarea-input" rows="4" placeholder="Textarea content.."></textarea>
             </div> --}}
-                <div class="mb-4">
+
+                <div>
+                    <textarea class="form-control" name="location" placeholder=""></textarea>
+                </div>
+                <div class="mb-4 mt-3">
 
                     <input type="submit" class="form-control " value="update" id="example-password-input" name=""
                         placeholder="">

@@ -2,7 +2,7 @@
 
 
 @section('main')
-    <form action="/service/store" method="post" enctype="multipart/form-data">
+    <form action="/skill/store" method="post" enctype="multipart/form-data">
         @csrf
         <div class="col-lg-8 col-xl-5">
             <div class="mb-4">
@@ -17,6 +17,6 @@
 
         </div>
 
-        <button class="btn btn-success">add service</button>
+        <button class="btn btn-success">add Skill</button>
     </form>
 @endsection

@@ -12,7 +12,8 @@ class SkillController extends Controller
      */
     public function index()
     {
-        //
+        $skills = Skill::all();
+        return view("admin.skill.index")->with("skills", $skills);
     }
 
     /**
@@ -20,7 +21,7 @@ class SkillController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.skill.create");
     }
 
     /**
@@ -28,7 +29,12 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Skill::create([
+            "name" => $request->name,
+            "logo" => $request->file("logo")->store("skills", "public"),
+            "user_id" => 1
+        ]);
+        return redirect("/admin/skill");
     }
 
     /**
@@ -58,8 +64,10 @@ class SkillController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Skill $skill)
+    public function destroy($id)
+
     {
-        //
+        Skill::find($id)->delete();
+        return redirect()->back();
     }
 }

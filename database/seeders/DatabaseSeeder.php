@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Certificate;
 use App\Models\Experience;
 use App\Models\Project;
+use App\Models\Service;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -54,5 +55,6 @@ class DatabaseSeeder extends Seeder
 
         Project::factory(10)->create();
         Certificate::factory(5)->create();
+        Service::factory(20)->create();
     }
 }

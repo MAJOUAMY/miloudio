@@ -12,7 +12,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\CertificateController;
-
+use App\Http\Controllers\SkillController;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -60,6 +60,18 @@ Route::middleware('auth')->group(function () {
     Route::get("/certificate/create", [CertificateController::class, 'create']);
     Route::post("/certificate/store", [CertificateController::class, 'store']);
     Route::get("/certificate/delete/{id}", [CertificateController::class, 'destroy']);
+    // services
+
+    Route::get("/admin/service", [ServiceController::class, 'adminIndex']);
+    Route::get("/service/create", [ServiceController::class, 'create']);
+    Route::post("/service/store", [ServiceController::class, 'store']);
+    Route::get("/service/delete/{id}", [ServiceController::class, 'destroy']);
+
+    //
+    Route::get("/admin/skill", [SkillController::class, 'index']);
+    Route::get("/skill/create", [SkillController::class, 'create']);
+    Route::post("/skill/store", [SkillController::class, 'store']);
+    Route::get("/skill/delete/{id}", [SkillController::class, 'destroy']);
 });
 
 require __DIR__ . '/auth.php';

@@ -136,6 +136,20 @@
                                 <span class="nav-main-link-name">Awards & Recognition</span>
                             </a>
                         </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="/admin/service">
+                                <i class="nav-main-link-icon fa fa-layer-group"></i>
+
+                                <span class="nav-main-link-name">Services</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="/admin/skill">
+                                <i class="nav-main-link-icon fa fa-heart"></i>
+
+                                <span class="nav-main-link-name">Skills</span>
+                            </a>
+                        </li>
 
 
 

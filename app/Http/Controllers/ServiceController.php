@@ -13,10 +13,14 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $user = User::find(1);
-         
-        return view("pages.services")->with(["user"=>$user]);
-    
+        $user = User::with("services","certificates")->find(1);
+
+        return view("pages.services")->with(["user" => $user]);
+    }
+    public function adminIndex()
+    {
+        $services = Service::all();
+        return view("admin.services.index")->with(["services" => $services]);
     }
 
     /**
@@ -24,7 +28,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.services.create");
     }
 
     /**
@@ -32,7 +36,13 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Service::create([
+            "name" => $request->name,
+            "logo" => $request->file("logo")->store("services", "public"),
+            "user_id" => 1
+
+        ]);
+        return redirect("/admin/service");
     }
 
     /**
@@ -62,8 +72,9 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Service $service)
+    public function destroy($id)
     {
-        //
+        Service::find($id)->delete();
+        return redirect()->back();
     }
 }
