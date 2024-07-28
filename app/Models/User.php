@@ -24,7 +24,8 @@ class User extends Authenticatable
         "experience_years",
         "telephone",
         "work_email",
-        "available"
+        "available",
+        "location"
 
 
     ];

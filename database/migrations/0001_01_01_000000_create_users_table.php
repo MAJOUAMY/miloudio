@@ -24,7 +24,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->integer("experience_years");
             $table->string('password');
-            // $table->boolean("available")->nullable();
+            $table->longText('location');
+
             $table->rememberToken();
             $table->timestamps();
         });

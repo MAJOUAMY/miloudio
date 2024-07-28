@@ -56,7 +56,7 @@
             </div> --}}
 
                 <div>
-                    <textarea class="form-control" name="location" placeholder=""></textarea>
+                    <textarea class="form-control"  name="location" placeholder="">{{ $user->location }}</textarea>
                 </div>
                 <div class="mb-4 mt-3">
 

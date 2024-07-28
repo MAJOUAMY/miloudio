@@ -46,6 +46,7 @@ class AboutController extends Controller
         $user->work_email = $request->work_email;
         $user->experience_years = $request->experience_years;
         $user->password = Hash::make($request->password);
+        $user->location = $request->location;
 
 
         $user->save();
