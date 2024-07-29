@@ -61,74 +61,30 @@
         <!-- Brands -->
         <div class="mt-10 lg:mt-14">
             <h3 class="text-2xl font-medium text-dark dark:text-light lg:text-3xl">
-                Working With 50+ Brands ✨ Worldwide
+                My Expert Area ✨
             </h3>
-            <div
+            {{-- <div
                 class="mt-8 grid grid-cols-[repeat(auto-fit,_minmax(60px,1fr))] gap-2 lg:grid-cols-[repeat(auto-fit,_minmax(80px,1fr))] lg:gap-4">
                 <div
                     class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
                     <img src="assets/img/notion.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
                 </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/webflow.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/mico.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/framer.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/zeplin.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/figma.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/notion.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/webflow.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/mico.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/framer.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/zeplin.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/figma.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/notion.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/webflow.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/mico.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
-                <div
-                    class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-                    <img src="assets/img/framer.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-                </div>
+
+            </div> --}}
+            <div
+                class="mt-8 grid grid-cols-[repeat(auto-fit,_minmax(60px,1fr))] gap-2 lg:grid-cols-[repeat(auto-fit,_minmax(80px,1fr))] lg:gap-4">
+                @foreach ($user->skills as $skill)
+                    <div class="text-center">
+                        <div class="grid place-content-center rounded-lg bg-light p-3 dark:bg-dark-2">
+                            <img src="{{ asset('storage/' . $skill->logo) }}" alt="" class="h-8 w-8" />
+                        </div>
+                        <p class="mt-1 text-base font-medium text-dark dark:text-light/70">
+                            {{ $skill->name }}
+                        </p>
+                    </div>
+                @endforeach
+
+
             </div>
         </div>
 
@@ -338,156 +294,41 @@
             </h3>
 
             <div class="hs-accordion-group mt-8 space-y-4">
-                <div
-                    class="hs-accordion rounded-lg border border-transparent bg-light transition hs-accordion-active:border-light hs-accordion-active:bg-white dark:border-transparent dark:bg-dark-2 dark:hs-accordion-active:border-dark-2 dark:hs-accordion-active:bg-black">
-                    <button
-                        class="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-5 text-start text-lg font-medium text-dark transition hover:text-muted disabled:pointer-events-none disabled:opacity-50 hs-accordion-active:text-primary dark:text-light/70 dark:hover:text-light dark:focus:outline-none dark:hs-accordion-active:text-primary xl:text-2xl">
-                        <span>What does a product designer need to know?</span>
-                        <span
-                            class="grid h-8 w-8 shrink-0 place-content-center rounded bg-white text-primary hs-accordion-active:bg-light dark:bg-black dark:hs-accordion-active:bg-dark-2">
-                            <svg class="block h-3.5 w-3.5 hs-accordion-active:hidden" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                                <path d="M12 5v14" />
-                            </svg>
-                            <svg class="hidden h-3.5 w-3.5 hs-accordion-active:block" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
-                        <div class="px-6 pb-5">
-                            <p class="text-base xl:text-lg">
-                                I'm here to help if you're searching for a product
-                                designer to bring your idea to life or a design partner
-                                to help take your business to the next level.
-                            </p>
+
+                @foreach ($user->questions as $question)
+                    <div
+                        class="hs-accordion rounded-lg border border-transparent bg-light transition hs-accordion-active:border-light hs-accordion-active:bg-white dark:border-transparent dark:bg-dark-2 dark:hs-accordion-active:border-dark-2 dark:hs-accordion-active:bg-black">
+                        <button
+                            class="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-5 text-start text-lg font-medium text-dark transition hover:text-muted disabled:pointer-events-none disabled:opacity-50 hs-accordion-active:text-primary dark:text-light/70 dark:hover:text-light dark:focus:outline-none dark:hs-accordion-active:text-primary xl:text-2xl">
+                            <span>{{ $question->content }}</span>
+                            <span
+                                class="grid h-8 w-8 shrink-0 place-content-center rounded bg-white text-primary hs-accordion-active:bg-light dark:bg-black dark:hs-accordion-active:bg-dark-2">
+                                <svg class="block h-3.5 w-3.5 hs-accordion-active:hidden"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14" />
+                                    <path d="M12 5v14" />
+                                </svg>
+                                <svg class="hidden h-3.5 w-3.5 hs-accordion-active:block"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
+                            <div class="px-6 pb-5">
+                                <p class="text-base xl:text-lg">
+                                    {{ $question->response->content }}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div
-                    class="hs-accordion active rounded-lg border border-transparent bg-light transition hs-accordion-active:border-light hs-accordion-active:bg-white dark:border-transparent dark:bg-dark-2 dark:hs-accordion-active:border-dark-2 dark:hs-accordion-active:bg-black">
-                    <button
-                        class="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-5 text-start text-lg font-medium text-dark transition hover:text-muted disabled:pointer-events-none disabled:opacity-50 hs-accordion-active:text-primary dark:text-light/70 dark:hover:text-light dark:focus:outline-none dark:hs-accordion-active:text-primary xl:text-2xl">
-                        <span>What does a product designer need to know?</span>
-                        <span
-                            class="grid h-8 w-8 shrink-0 place-content-center rounded bg-white text-primary hs-accordion-active:bg-light dark:bg-black dark:hs-accordion-active:bg-dark-2">
-                            <svg class="block h-3.5 w-3.5 hs-accordion-active:hidden" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                                <path d="M12 5v14" />
-                            </svg>
-                            <svg class="hidden h-3.5 w-3.5 hs-accordion-active:block" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300">
-                        <div class="px-6 pb-5">
-                            <p class="text-base xl:text-lg">
-                                I'm here to help if you're searching for a product
-                                designer to bring your idea to life or a design partner
-                                to help take your business to the next level.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="hs-accordion rounded-lg border border-transparent bg-light transition hs-accordion-active:border-light hs-accordion-active:bg-white dark:border-transparent dark:bg-dark-2 dark:hs-accordion-active:border-dark-2 dark:hs-accordion-active:bg-black">
-                    <button
-                        class="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-5 text-start text-lg font-medium text-dark transition hover:text-muted disabled:pointer-events-none disabled:opacity-50 hs-accordion-active:text-primary dark:text-light/70 dark:hover:text-light dark:focus:outline-none dark:hs-accordion-active:text-primary xl:text-2xl">
-                        <span>What does a product designer need to know?</span>
-                        <span
-                            class="grid h-8 w-8 shrink-0 place-content-center rounded bg-white text-primary hs-accordion-active:bg-light dark:bg-black dark:hs-accordion-active:bg-dark-2">
-                            <svg class="block h-3.5 w-3.5 hs-accordion-active:hidden" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                                <path d="M12 5v14" />
-                            </svg>
-                            <svg class="hidden h-3.5 w-3.5 hs-accordion-active:block" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
-                        <div class="px-6 pb-5">
-                            <p class="text-base xl:text-lg">
-                                I'm here to help if you're searching for a product
-                                designer to bring your idea to life or a design partner
-                                to help take your business to the next level.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="hs-accordion rounded-lg border border-transparent bg-light transition hs-accordion-active:border-light hs-accordion-active:bg-white dark:border-transparent dark:bg-dark-2 dark:hs-accordion-active:border-dark-2 dark:hs-accordion-active:bg-black">
-                    <button
-                        class="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-5 text-start text-lg font-medium text-dark transition hover:text-muted disabled:pointer-events-none disabled:opacity-50 hs-accordion-active:text-primary dark:text-light/70 dark:hover:text-light dark:focus:outline-none dark:hs-accordion-active:text-primary xl:text-2xl">
-                        <span>What does a product designer need to know?</span>
-                        <span
-                            class="grid h-8 w-8 shrink-0 place-content-center rounded bg-white text-primary hs-accordion-active:bg-light dark:bg-black dark:hs-accordion-active:bg-dark-2">
-                            <svg class="block h-3.5 w-3.5 hs-accordion-active:hidden" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                                <path d="M12 5v14" />
-                            </svg>
-                            <svg class="hidden h-3.5 w-3.5 hs-accordion-active:block" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
-                        <div class="px-6 pb-5">
-                            <p class="text-base xl:text-lg">
-                                I'm here to help if you're searching for a product
-                                designer to bring your idea to life or a design partner
-                                to help take your business to the next level.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="hs-accordion rounded-lg border border-transparent bg-light transition hs-accordion-active:border-light hs-accordion-active:bg-white dark:border-transparent dark:bg-dark-2 dark:hs-accordion-active:border-dark-2 dark:hs-accordion-active:bg-black">
-                    <button
-                        class="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-5 text-start text-lg font-medium text-dark transition hover:text-muted disabled:pointer-events-none disabled:opacity-50 hs-accordion-active:text-primary dark:text-light/70 dark:hover:text-light dark:focus:outline-none dark:hs-accordion-active:text-primary xl:text-2xl">
-                        <span>What does a product designer need to know?</span>
-                        <span
-                            class="grid h-8 w-8 shrink-0 place-content-center rounded bg-white text-primary hs-accordion-active:bg-light dark:bg-black dark:hs-accordion-active:bg-dark-2">
-                            <svg class="block h-3.5 w-3.5 hs-accordion-active:hidden" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                                <path d="M12 5v14" />
-                            </svg>
-                            <svg class="hidden h-3.5 w-3.5 hs-accordion-active:block" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
-                        <div class="px-6 pb-5">
-                            <p class="text-base xl:text-lg">
-                                I'm here to help if you're searching for a product
-                                designer to bring your idea to life or a design partner
-                                to help take your business to the next level.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
 

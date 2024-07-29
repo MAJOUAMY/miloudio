@@ -7,6 +7,8 @@ use App\Models\Category;
 use App\Models\Certificate;
 use App\Models\Experience;
 use App\Models\Project;
+use App\Models\Question;
+use App\Models\Response;
 use App\Models\Service;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -56,5 +58,13 @@ class DatabaseSeeder extends Seeder
         Project::factory(10)->create();
         Certificate::factory(5)->create();
         Service::factory(20)->create();
+
+        Question::factory(10)->create();
+        for ($i = 1; $i <= 10; $i++) {
+            Response::create([
+                "content" => "response for question" . $i,
+                "question_id" => $i
+            ]);
+        }
     }
 }

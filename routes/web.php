@@ -12,6 +12,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\SkillController;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -67,11 +68,18 @@ Route::middleware('auth')->group(function () {
     Route::post("/service/store", [ServiceController::class, 'store']);
     Route::get("/service/delete/{id}", [ServiceController::class, 'destroy']);
 
-    //
+    // skill
     Route::get("/admin/skill", [SkillController::class, 'index']);
     Route::get("/skill/create", [SkillController::class, 'create']);
     Route::post("/skill/store", [SkillController::class, 'store']);
     Route::get("/skill/delete/{id}", [SkillController::class, 'destroy']);
+
+
+    // faq
+    Route::get("/admin/faq", [FaqController::class, 'index']);
+    Route::get("/faq/create", [FaqController::class, 'create']);
+    Route::get("/faq/delete/{id}", [FaqController::class, 'destroy']);
+    Route::post("/faq/store", [FaqController::class, 'store']);
 });
 
 require __DIR__ . '/auth.php';
@@ -80,7 +88,9 @@ Route::get("/blog", [BlogController::class, 'index']);
 Route::get("/blog/{id}", [BlogController::class, 'show']);
 
 Route::get("/contact", function () {
-    $user = User::find(1);
+    $user = User::with(["questions" => function ($q) {
+        $q->with("response");
+    }])->find(1);
     return view("pages.contact")->with("user", $user);
 });
 Route::get("/services", [ServiceController::class, 'index']);

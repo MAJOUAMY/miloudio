@@ -13,8 +13,10 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $user = User::with("services","certificates")->find(1);
-
+        $user = User::with(["services", "certificates","skills", "questions" => function ($query) {
+            $query->with("response");
+        }])->find(1);
+        // dd($user);
         return view("pages.services")->with(["user" => $user]);
     }
     public function adminIndex()

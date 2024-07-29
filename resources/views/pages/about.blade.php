@@ -74,7 +74,7 @@
             </div>
         </div>
 
-        <!-- Brands -->
+        <!--  -->
         <div class="mt-10 lg:mt-14">
             <h3 class="text-2xl font-medium text-dark dark:text-light lg:text-3xl">
                 My Expert Area ✨

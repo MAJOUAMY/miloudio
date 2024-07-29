@@ -150,6 +150,13 @@
                                 <span class="nav-main-link-name">Skills</span>
                             </a>
                         </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="/admin/faq">
+                                <i class="nav-main-link-icon fa fa-question"></i>
+
+                                <span class="nav-main-link-name">faq</span>
+                            </a>
+                        </li>
 
 
 
