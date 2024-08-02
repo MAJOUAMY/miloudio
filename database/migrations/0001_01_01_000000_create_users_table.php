@@ -20,9 +20,10 @@ return new class extends Migration
             $table->string("work_email")->unique();
             $table->string("phone");
             $table->string("image")->default("/assets/img/profile.png");
-            // $table->string("description")->default("A Passionate Full Stack Developer 🖥️ & Product Designer having 2 years of Experiences .");
             $table->timestamp('email_verified_at')->nullable();
             $table->integer("experience_years");
+            $table->unsignedBigInteger("client_number");
+
             $table->string('password');
             $table->longText('location');
 

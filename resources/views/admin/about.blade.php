@@ -44,6 +44,11 @@
                     <input type="number" value="{{ $user->experience_years }}" class="form-control" name="experience_years"
                         placeholder="">
                 </div>
+                <div class="mb-4">
+                    <label class="form-label">Client Number</label>
+                    <input type="number" value="{{ $user->client_number }}" class="form-control" name="client_number"
+                        placeholder="">
+                </div>
 
 
                 <div class="mb-4">

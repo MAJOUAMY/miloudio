@@ -21,9 +21,9 @@
                     </span>
                     having
                     <span class="font-semibold text-dark dark:text-white">
-                        12 years
+                        {{ $user->experience_years }} {{ $user->experience_years == 1 ? 'year' : 'years' }}
                     </span>
-                    of Experiences over 24+ Country Worldwide.
+                    of Experiences
                 </p>
             </div>
             <div
@@ -54,7 +54,7 @@
                 {{-- we should also deal with this clients --}}
                 <div class="">
                     <h2 class="text-3xl font-semibold text-dark dark:text-light lg:text-[40px]">
-                        <span>72</span>+
+                        <span>{{ $user->client_number }}</span>+
                     </h2>
                     <p class="mt-2 text-muted">Happy Client</p>
                 </div>
@@ -74,7 +74,7 @@
             </div>
         </div>
 
-        <!--  -->
+        <!-- skills -->
         <div class="mt-10 lg:mt-14">
             <h3 class="text-2xl font-medium text-dark dark:text-light lg:text-3xl">
                 My Expert Area ✨
@@ -87,7 +87,8 @@
                 </div>
 
             </div> --}}
-            <div class="mt-8 grid grid-cols-[repeat(auto-fit,_minmax(60px,1fr))] gap-2 lg:grid-cols-[repeat(auto-fit,_minmax(80px,1fr))] lg:gap-4">
+            <div
+                class="mt-8 grid grid-cols-[repeat(auto-fit,_minmax(60px,1fr))] gap-2 lg:grid-cols-[repeat(auto-fit,_minmax(80px,1fr))] lg:gap-4">
                 @foreach ($user->skills as $skill)
                     <div class="text-center">
                         <div class="grid place-content-center rounded-lg bg-light p-3 dark:bg-dark-2">
@@ -104,149 +105,93 @@
         </div>
 
         <!-- Reviews -->
-        <div class="mt-10 lg:mt-14">
-            <div class="flex flex-wrap items-center justify-between gap-6">
-                <h3 class="text-2xl font-medium text-dark dark:text-light lg:text-3xl">
-                    Trusted By 1200+ Clients
-                </h3>
+        @if ($user->client_number >= 1)
+            <div class="mt-10 lg:mt-14">
+                <div class="flex flex-wrap items-center justify-between gap-6">
+                    <h3 class="text-2xl font-medium text-dark dark:text-light lg:text-3xl">
 
-                <div class="flex items-center gap-2">
-                    <button
-                        class="review-carousel-button-prev grid h-9 w-9 place-content-center rounded-lg border border-muted/30 text-muted transition hover:border-primary hover:text-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="h-5 w-5 shrink-0">
-                            <path d="M4.167 10h11.666M4.167 10l5 5m-5-5 5-5" />
-                        </svg>
-                    </button>
-                    <button
-                        class="review-carousel-button-next grid h-9 w-9 place-content-center rounded-lg border border-muted/30 text-muted transition hover:border-primary hover:text-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="h-5 w-5 shrink-0">
-                            <path d="M4.167 10h11.666m-5 5 5-5m-5-5 5 5" />
-                        </svg>
-                    </button>
+                        Trusted By {{ $user->client_number }} {{ $user->client_number == 1 ? 'Client' : 'Clients' }}
+                    </h3>
+
+                    <div class="flex items-center gap-2">
+                        <button
+                            class="review-carousel-button-prev grid h-9 w-9 place-content-center rounded-lg border border-muted/30 text-muted transition hover:border-primary hover:text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="h-5 w-5 shrink-0">
+                                <path d="M4.167 10h11.666M4.167 10l5 5m-5-5 5-5" />
+                            </svg>
+                        </button>
+                        <button
+                            class="review-carousel-button-next grid h-9 w-9 place-content-center rounded-lg border border-muted/30 text-muted transition hover:border-primary hover:text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="h-5 w-5 shrink-0">
+                                <path d="M4.167 10h11.666m-5 5 5-5m-5-5 5 5" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="mt-8">
-                <div class="swiper review-carousel">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="flex h-full flex-col justify-between rounded-lg bg-light p-6 dark:bg-dark-2">
-                                <div class="flex flex-wrap items-center justify-between gap-4">
-                                    <!-- stars -->
-                                    <div class="flex flex-wrap items-center gap-1">
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
+                @if ($user->reviews_count > 0)
+                    <div class="mt-8">
+                        <div class="swiper review-carousel">
+                            <div class="swiper-wrapper">
+
+                                @foreach ($user->reviews as $review)
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="flex h-full flex-col justify-between rounded-lg bg-light p-6 dark:bg-dark-2">
+                                            <div class="flex flex-wrap items-center justify-between gap-4">
+                                                <!-- stars -->
+                                                <div class="flex flex-wrap items-center gap-1">
+
+                                                    <img src="assets/img/star-full.svg" alt=""
+                                                        class="h-4 w-4 shrink-0" />
+                                                    <img src="assets/img/star-full.svg" alt=""
+                                                        class="h-4 w-4 shrink-0" />
+                                                    <img src="assets/img/star-full.svg" alt=""
+                                                        class="h-4 w-4 shrink-0" />
+                                                    <img src="assets/img/star-full.svg" alt=""
+                                                        class="h-4 w-4 shrink-0" />
+                                                    <img src="assets/img/star-full.svg" alt=""
+                                                        class="h-4 w-4 shrink-0" />
+                                                </div>
+
+                                                <a href="{{ $review->url }}" target="_blank"
+                                                    class="inline-flex items-center gap-2 rounded bg-white px-2 py-1 text-sm leading-none text-primary transition hover:bg-primary hover:text-white dark:bg-black">
+                                                    <span>preview</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15"
+                                                        fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" class="h-3.5 w-3.5 shrink-0">
+                                                        <path d="m9.917 4.583-5.834 5.834m.584-5.834h5.25v5.25" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+
+                                            <blockquote class="mt-6 flex-1 text-lg">
+                                                "{{ $review->content }}
+                                            </blockquote>
+
+                                            <p class="mt-8 font-medium">
+
+                                                <span class="font-normal text-muted">
+                                                    {{ $review->client_name }}
+                                                </span>
+                                            </p>
+                                        </div>
                                     </div>
+                                @endforeach
 
-                                    <a href="#"
-                                        class="inline-flex items-center gap-2 rounded bg-white px-2 py-1 text-sm leading-none text-primary transition hover:bg-primary hover:text-white dark:bg-black">
-                                        <span>framer.com</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15" fill="none"
-                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            class="h-3.5 w-3.5 shrink-0">
-                                            <path d="m9.917 4.583-5.834 5.834m.584-5.834h5.25v5.25" />
-                                        </svg>
-                                    </a>
-                                </div>
 
-                                <blockquote class="mt-6 flex-1 text-lg">
-                                    "We've been using BentoFolio for over a year now,
-                                    and I must say, it's been a game-changer for us. The
-                                    user interface is intuitive and the feature.
-                                </blockquote>
 
-                                <p class="mt-8 font-medium">
-                                    Oliver Clain -
-                                    <span class="font-normal text-muted">
-                                        Product Designer
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="flex h-full flex-col justify-between rounded-lg bg-light p-6 dark:bg-dark-2">
-                                <div class="flex flex-wrap items-center justify-between gap-4">
-                                    <!-- stars -->
-                                    <div class="flex flex-wrap items-center gap-1">
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                    </div>
-
-                                    <a href="#"
-                                        class="inline-flex items-center gap-2 rounded bg-white px-2 py-1 text-sm leading-none text-primary transition hover:bg-primary hover:text-white dark:bg-black">
-                                        <span>framer.com</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15" fill="none"
-                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            class="h-3.5 w-3.5 shrink-0">
-                                            <path d="m9.917 4.583-5.834 5.834m.584-5.834h5.25v5.25" />
-                                        </svg>
-                                    </a>
-                                </div>
-
-                                <blockquote class="mt-6 flex-1 text-lg">
-                                    "We've been using BentoFolio for over a year now,
-                                    and I must say, it's been a game-changer for us. The
-                                    user interface is intuitive and the feature.
-                                </blockquote>
-
-                                <p class="mt-8 font-medium">
-                                    Oliver Clain -
-                                    <span class="font-normal text-muted">
-                                        Product Designer
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="flex h-full flex-col justify-between rounded-lg bg-light p-6 dark:bg-dark-2">
-                                <div class="flex flex-wrap items-center justify-between gap-4">
-                                    <!-- stars -->
-                                    <div class="flex flex-wrap items-center gap-1">
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                        <img src="assets/img/star-full.svg" alt="" class="h-4 w-4 shrink-0" />
-                                    </div>
-
-                                    <a href="#"
-                                        class="inline-flex items-center gap-2 rounded bg-white px-2 py-1 text-sm leading-none text-primary transition hover:bg-primary hover:text-white dark:bg-black">
-                                        <span>framer.com</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15" fill="none"
-                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            class="h-3.5 w-3.5 shrink-0">
-                                            <path d="m9.917 4.583-5.834 5.834m.584-5.834h5.25v5.25" />
-                                        </svg>
-                                    </a>
-                                </div>
-
-                                <blockquote class="mt-6 flex-1 text-lg">
-                                    "We've been using BentoFolio for over a year now,
-                                    and I must say, it's been a game-changer for us. The
-                                    user interface is intuitive and the feature.
-                                </blockquote>
-
-                                <p class="mt-8 font-medium">
-                                    Oliver Clain -
-                                    <span class="font-normal text-muted">
-                                        Product Designer
-                                    </span>
-                                </p>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endif
+
+
             </div>
-        </div>
+        @endif
+
+
 
         <!-- Awards -->
         <div class="mt-10 lg:mt-14">

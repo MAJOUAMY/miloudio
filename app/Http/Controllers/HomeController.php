@@ -11,6 +11,7 @@ class HomeController extends Controller
     {
         $user = User::with([
             "experiences",
+            "socials",
             "services" => function ($query) {
                 $query->take(4);
             },

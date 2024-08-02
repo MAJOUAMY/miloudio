@@ -9,6 +9,7 @@ use App\Models\Experience;
 use App\Models\Project;
 use App\Models\Question;
 use App\Models\Response;
+use App\Models\Review;
 use App\Models\Service;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -66,5 +67,7 @@ class DatabaseSeeder extends Seeder
                 "question_id" => $i
             ]);
         }
+
+        Review::factory(10)->create();
     }
 }

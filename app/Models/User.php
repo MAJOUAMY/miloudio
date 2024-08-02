@@ -25,7 +25,8 @@ class User extends Authenticatable
         "telephone",
         "work_email",
         "available",
-        "location"
+        "location",
+        "client_number"
 
 
     ];
@@ -58,6 +59,15 @@ class User extends Authenticatable
     public function questions()
     {
         return $this->hasMany(Question::class);
+    }
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function socials()
+    {
+        return $this->hasMany(Social::class);
     }
     /**
      * The attributes that should be hidden for serialization.

@@ -12,7 +12,7 @@ class AboutController extends Controller
 
     public function index()
     {
-        $user = User::with(['certificates', 'blogs', 'skills'])->withCount('projects')->find(1);
+        $user = User::with(['certificates', 'blogs', 'skills', 'reviews'])->withCount('projects', 'reviews')->find(1);
 
         return view('pages.about')->with('user', $user);
     }
@@ -47,6 +47,7 @@ class AboutController extends Controller
         $user->experience_years = $request->experience_years;
         $user->password = Hash::make($request->password);
         $user->location = $request->location;
+        $user->client_number = $request->client_number;
 
 
         $user->save();

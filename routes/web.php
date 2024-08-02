@@ -13,7 +13,9 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\SocialController;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -80,6 +82,19 @@ Route::middleware('auth')->group(function () {
     Route::get("/faq/create", [FaqController::class, 'create']);
     Route::get("/faq/delete/{id}", [FaqController::class, 'destroy']);
     Route::post("/faq/store", [FaqController::class, 'store']);
+
+    // review
+
+    Route::get("/admin/review", [ReviewController::class, 'index']);
+    Route::get("/review/create", [ReviewController::class, 'create']);
+    Route::get("/review/delete/{id}", [ReviewController::class, 'destroy']);
+    Route::post("/review/store", [ReviewController::class, 'store']);
+
+    // social
+    Route::get("/admin/social", [SocialController::class, 'index']);
+    Route::get("/social/create", [SocialController::class, 'create']);
+    Route::get("/social/delete/{id}", [SocialController::class, 'destroy']);
+    Route::post("/social/store", [SocialController::class, 'store']);
 });
 
 require __DIR__ . '/auth.php';

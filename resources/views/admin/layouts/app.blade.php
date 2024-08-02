@@ -92,14 +92,14 @@
                 <div class="content-side">
                     <ul class="nav-main">
                         <li class="nav-main-item">
-                            <a class="nav-main-link active" href="db_dark.html">
+                            <a class="nav-main-link " href="db_dark.html">
                                 <i class="nav-main-link-icon fa fa-rocket"></i>
                                 <span class="nav-main-link-name">Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-main-heading">Pages</li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/about/edit">
+                            <a class="nav-main-link {{ Request::is('/about/edit') ? 'active' : '' }}" href="/about/edit">
                                 <i class="nav-main-link-icon fa fa-address-card"></i>
                                 <span class="nav-main-link-name">About</span>
                             </a>
@@ -155,6 +155,20 @@
                                 <i class="nav-main-link-icon fa fa-question"></i>
 
                                 <span class="nav-main-link-name">faq</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="/admin/review">
+                                <i class="nav-main-link-icon fa fa-review"></i>
+
+                                <span class="nav-main-link-name">review</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="/admin/social">
+                                <i class="nav-main-link-icon fa fa-"></i>
+
+                                <span class="nav-main-link-name">Socials</span>
                             </a>
                         </li>
 

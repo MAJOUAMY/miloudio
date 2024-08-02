@@ -12,7 +12,8 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::all();
+        return view("admin.review.index", compact("reviews"));
     }
 
     /**
@@ -20,7 +21,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        return  view("admin.review.create");
     }
 
     /**
@@ -28,7 +29,13 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Review::create([
+            "content" => $request->content,
+            "user_id" => 1,
+            "client_name" => $request->client_name,
+            "url" => $request->url
+        ]);
+        return redirect("/admin/review");
     }
 
     /**
@@ -58,8 +65,9 @@ class ReviewController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Review $review)
+    public function destroy($id)
     {
-        //
+        Review::find($id)->delete();
+        return redirect()->back();
     }
 }
